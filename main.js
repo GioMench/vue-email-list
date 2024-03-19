@@ -18,24 +18,26 @@ createApp({
                 console.log(response.data.response);
                 theMail = response.data.response;
                 //console.log(theMail)
-
-                for (let i = 0; i < 10; i++) {
-                    this.randomMail.push(theMail)
-                }
-
-
+                this.randomMail.push(theMail)
+                
             })
         },
 
+        generateMailArray() {
 
+            for (let i = 0; i < 10; i++) {
+               this.callApi()
+            }
 
+        },
 
+        
     },
     mounted() {
 
         this.callApi(),
-            
-            console.log(this.randomMail);
+        this.generateMailArray(),
+        console.log(this.randomMail);
     }
 
 }).mount('#app')
