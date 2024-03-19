@@ -11,8 +11,10 @@
 <body>
 
     <div id='app'>
-        <ul>
-            <li>{{randomMail}}</li>
+        <ul v-for="(mail,index) in randomMail">
+            <li >
+                {{mail}}
+            </li>
         </ul>
     </div>
 
